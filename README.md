@@ -173,11 +173,11 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 
 
 ## STM 32 CUBE PROGRAM :
-/**
+*/
 NAME-DHARANI DHARAN K
 REG NO-212223040036
 DEPT-CSE
-**/
+/*
 /**
   ******************************************************************************
   * @file           : main.c
