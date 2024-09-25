@@ -173,12 +173,8 @@ https://engineeringxpert.com/wp-content/uploads/2022/04/26.png
 
 
 ## STM 32 CUBE PROGRAM :
-```
-NAME-DHARANI DHARAN K
-REG NO-212223040036
-DEPT-CSE
-```
-
+/* USER CODE BEGIN Header */
+/**
   ******************************************************************************
   * @file           : main.c
   * @brief          : Main program body
@@ -198,25 +194,12 @@ DEPT-CSE
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
 #include "lcd.h"
+Lcd_PortType ports[] = {GPIOA,GPIOA,GPIOA,GPIOA};
+Lcd_PinType pins[] = {GPIO_PIN_3,GPIO_PIN_2,GPIO_PIN_1,GPIO_PIN_0};
 Lcd_HandleTypeDef lcd;
-
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
-void lcd_display()
-{
-	Lcd_cursor(&lcd,0,1);
-	Lcd_string(&lcd,"Name:DIVYA P\n");
 
-	Lcd_cursor(&lcd,1,1);
-	Lcd_string(&lcd,"212223040044\n");
-	for(int x=0;x<100;x++)
-	{
-		Lcd_cursor(&lcd,2,1);
-		Lcd_int(&lcd,x);
-		HAL_Delay(200);
-	}
-	Lcd_clear(&lcd);
-}
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -242,19 +225,14 @@ void lcd_display()
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-/* USER CODE BEGIN PFP */
+void lcd_display()
+{
+	Lcd_cursor(&lcd,0,1);
+	Lcd_string(&lcd,"DHARANI DHARAN K\n");
+	Lcd_cursor(&lcd,1,1);
+	Lcd_string(&lcd,"212223040036");
 
-/* USER CODE END PFP */
-
-/* Private user code ---------------------------------------------------------*/
-/* USER CODE BEGIN 0 */
-
-/* USER CODE END 0 */
-
-/**
-  * @brief  The application entry point.
-  * @retval int
-  */
+}
 int main(void)
 {
   /* USER CODE BEGIN 1 */
@@ -280,10 +258,9 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   /* USER CODE BEGIN 2 */
-  Lcd_PortType ports[]={GPIOA,GPIOA,GPIOA,GPIOA};
-  Lcd_PinType pins[]={GPIO_PIN_3,GPIO_PIN_2,GPIO_PIN_1,GPIO_PIN_0};
 
-  lcd=Lcd_create(ports,pins,GPIOB,GPIO_PIN_0,GPIOB,GPIO_PIN_1,LCD_4_BIT_MODE);
+  lcd = Lcd_create(ports,pins,GPIOB,GPIO_PIN_0,GPIOB,GPIO_PIN_1,LCD_4_BIT_MODE);
+
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -291,7 +268,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-	  lcd_display();
+      lcd_display();
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -411,17 +388,15 @@ void assert_failed(uint8_t *file, uint32_t line)
 
 
 
-
-
 ## Output screen shots of proteus  :
 
-![image](https://github.com/user-attachments/assets/33ebda76-c758-4462-8abb-537403f7db25)
+![Screenshot 2024-09-25 112951](https://github.com/user-attachments/assets/517d9747-5bac-4bee-b85d-e59c06da5f8d)
 
  
  
  ## CIRCUIT DIAGRAM (EXPORT THE GRAPHICS TO PDF AND ADD THE SCREEN SHOT HERE): 
 
- ![image](https://github.com/user-attachments/assets/5f3ed144-183a-4297-ba34-c25078b01983)
+![Screenshot 2024-09-25 113432](https://github.com/user-attachments/assets/b4912c27-38e0-4b8d-924b-73bb2b92d4ef)
 
  
  
